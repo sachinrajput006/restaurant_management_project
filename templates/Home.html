@@ -1,0 +1,31 @@
+{% load static %}
+<! DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <title> Home Page </title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to my site</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>About Us</h2>
+            <p>We provide top-notch services to help you succed. our team is dedicated to deliver the best experience possible.</p>
+        </section>
+        <section>
+            <h2>Get Started</h2>
+            <p>Join our community and expore all the amazing things we offer.</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; {{ year|default:2025 }} My Website. All right Reserved.
+
+    </footer>
+</body>
+</html>
+
