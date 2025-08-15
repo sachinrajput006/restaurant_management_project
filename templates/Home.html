@@ -3,13 +3,13 @@
 <html lang='en'>
 <head>
     <meta charset="UTF-8">
-    <title> Home Page </title>
+    <title> {{restaurant_name}} </title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body style="margin:0; font-family: 'Segoe UI', Arial, sans-serif; background-color:#f7f8fa; color:#333;">
     <!-- Main Header -->
     <header style="background-color:4f46e5; color:white; texy-align:center; pedding:1.5rem 0; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
-        <h1 style="margin:0; font-size:2.5rem;">Welcome to my site</h1>
+        <h1 style="margin:0; font-size:2.5rem;">Welcome to{{restaurant_name}}</h1>
     </header>
     <!-- Main Content -->
     <main style="max-width:1100px; margin:2rem auto; pedding:0 1rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;">
