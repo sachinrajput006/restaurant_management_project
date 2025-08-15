@@ -6,9 +6,8 @@ from .models import Restaurant
 
 def homepage(request):
     restaurant = Restaurant.objects.first()
-    context = {
-        "restaurant_name":restaurant.restaurant_name if restaurant else "My Restaurant"
+    return render(request, "homepage.html", {"restaurant": restaurant})
 
-    }
-
-    return render(request, "homepage.html", context)
+    def about(request):
+        restaurant = Restaurant.objects.first()
+        return render(request, "about.html", {"restaurant": restaurant})
