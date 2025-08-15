@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us </title>
+</head>
+<body style="font-family: Arial, sans-serif; background:3f7f8fa; margin:0;">
+
+    <!-- Header / Navigation -->
+
+    <header style="background:@4f46e5; color:white; pading:1rem; text-align:center;">
+        <nav>
+            <a href="/" style="color:white; margin-right:15px; text-decoration:none;">Home</a>
+            <a href="/about" style="color:white; text-decoration:none">About </a>
+        </nav>
+    </header>
+
+    <!-- Content -->
+
+    <main style="max-width:900px; margin:2rem auto; padding:1rem; background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1)">
+        <h1 style="color:#4f46e5">About our Restaurant</h1>
+        <p style="line-height:1.6; font-size:1.1rem;">
+            Welcome to <strong>{{retaurant_name}}</strong>, Where passion meets flavor.
+            Our chefs Craft every dish with fresh ingredients and uthentic recipes to bring you a dining experience you'll never forget.
+        </p>
+        <img src="{% static 'images/restaurant.jpg'%}" alt="Our Restaurant" style="max-width:100%; border-radius:12px; margin-top:1rem;">
+    </main>
+
