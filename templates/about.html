@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Us </title>
+    <title>About {{restaurant.name}} </title>
 </head>
 <body style="font-family: Arial, sans-serif; background:3f7f8fa; margin:0;">
 
@@ -18,11 +19,25 @@
     <!-- Content -->
 
     <main style="max-width:900px; margin:2rem auto; padding:1rem; background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1)">
-        <h1 style="color:#4f46e5">About our Restaurant</h1>
+        <h1 style="color:#4f46e5">About {{ restaurant.name }}</h1>
         <p style="line-height:1.6; font-size:1.1rem;">
-            Welcome to <strong>{{retaurant_name}}</strong>, Where passion meets flavor.
-            Our chefs Craft every dish with fresh ingredients and uthentic recipes to bring you a dining experience you'll never forget.
+            {{restaurant.description }}
         </p>
-        <img src="{% static 'images/restaurant.jpg'%}" alt="Our Restaurant" style="max-width:100%; border-radius:12px; margin-top:1rem;">
+        {% if restaurant.image %}
+            <img src"{{ restaurant.image.url}}" alt="{{restaurant.name}}" style="max-width:100%; border-radius:12px; margin-top:1rem;">
+        {% else %}
+            <img src="{% static 'images/default-restaurant.jpg'%}" alt="{{restaurant.name }}" style="max-width:100%; border-radius:12px; margin-top:1rem;">
+
+        {{% endif %}}
     </main>
+
+
+    <!-- Footer -->
+
+    <footer style="background:#1f2937; color:#ccc; text-align:center; padding:1rem; margin-top:2rem;">
+        &copy {{restaurant.name }} - All Rights Reserved.
+    </footer>
+</body>
+</html>
+
 
