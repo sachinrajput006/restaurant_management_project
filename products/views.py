@@ -24,3 +24,18 @@ class ItemView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+def get_menu_item(request, pk):
+    try: if pk == 1:
+        return Response({"id": 1, "name": "Pizza", "price": "10.99"})
+
+        else:
+            raise ValueError ("Menu item not found")
+
+    except ValueError as e:
+        return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
+
+    except Exception as e:
+        return Response({"error": f"Unexpected error: {str(e)}*},
+        status=status.HTTP_500INTERNAL_SERVER_ERROR)
