@@ -5,9 +5,13 @@ from .models import Restaurant
 
 
 def homepage(request):
+
     restaurant = Restaurant.objects.first()
+    
     return render(request, "homepage.html", {"restaurant": restaurant})
 
     def about(request):
+
         restaurant = Restaurant.objects.first()
+
         return render(request, "about.html", {"restaurant": restaurant})
