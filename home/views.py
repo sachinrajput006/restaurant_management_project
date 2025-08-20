@@ -17,3 +17,6 @@ def homepage(request):
         restaurant = Restaurant.objects.first()
 
         return render(request, "about.html", {"restaurant": restaurant})
+
+def reservations(request):
+    return render(request, "reservations.html")
