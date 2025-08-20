@@ -5,6 +5,7 @@ from rest_framework import status
 
 from .models import Item
 from .serializers import ItemSerializer
+from django.http import JsonResponse
 
 '''
 NOTE: Conside this as a reference and follow this same coding structure or format to work on you tasks
@@ -39,3 +40,18 @@ def get_menu_item(request, pk):
     except Exception as e:
         return Response({"error": f"Unexpected error: {str(e)}*},
         status=status.HTTP_500INTERNAL_SERVER_ERROR)
+
+
+def list_menu_items(request):
+    # Hardcoded list of menu items(mock data for now)
+
+    menu_items = [
+        {"id": 1, "name": "Pizza", "price": 9.99},
+        {"id": 2, "name": "Burger", "price": 5.98},
+        {"id": 3, "name": "Pasta", "price": 8.98},
+    ]
+
+    return JsonResponse(menu_items, safe=False)
+
+
+    
