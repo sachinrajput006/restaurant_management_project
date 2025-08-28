@@ -1,5 +1,5 @@
 {% load static %}
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html lang='en'>
 <head>
     <meta charset="UTF-8">
@@ -48,17 +48,30 @@
         }
 </head>
 <body style="margin:0; font-family: 'Segoe UI', Arial, sans-serif; background-color:#f7f8fa; color:#333;">
-    <!-- Main Header -->
+
     <header style="background-color:4f46e5; color:white; texy-align:center; pedding:1.5rem 0; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
 
         <!-- logo -->
         <img src="{% static 'images/logo.png' %}" alt="{{restaurant.name}} Logo" style="height:80px; margin-bottom:10px; display:block; margin-right:auto;">
         
         <h1 style="margin:0; font-size:2.5rem;">Welcome to{{restaurant_name}}</h1>
-        <p>We're happy to serve you the best food in town.</p>
-
+        <p> We're happy to serve you the best food in town.</p>
     </header>
-    <!-- Main Content -->
+  
+    
+    <section style="text-align:center; margin:1.5rem 0;">
+        <form method="GET" action="">
+            
+            <input type="text" name="q" placeholder="Search menu items..."
+                style="width:60%; max-width:400px; padding:0.7rem 1rem; border:1px solid #ccc; border-radius:8px; font-size:1rem;">
+            <buttom type="sumbit"
+                style="padding:0.7rem 1.2rem; margin-left:0.5rem; background-color:#4f46e5;color:white; border:none;  border-radius:8px: cursor:pointer; font-size:1rem;">
+                Search
+            </button>
+        </form>
+    </section>
+
+    
     <main style="max-width:1100px; margin:2rem auto; pedding:0 1rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;">
         
         <section style="background:white; pedding:1.5rem; border-redius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:box-shadow 0.2s ease;">
@@ -72,12 +85,10 @@
                 Join our community and expore all the amazing things we offer.</p>
         </section>
 
-        <p><strong>Phone:</strong> {{
-            phone_number
-        }} </p>
+        <p><strong>Phone:</strong> {{phone_number}} </p>
     </main>
 
-    <!-- Footer -->
+   
     <footer style="background-color:1f2937; color:#ccc; text-align:center; padding:1rem 0; margin-top:2rem;">
         &copy; {{ current_year }} {{ restaurant_name }} My Website. All Rights Reserved.
 
