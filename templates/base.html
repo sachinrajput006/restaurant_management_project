@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Restaurant{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %">
+    </head>
+    <body>
+        <!-- Page Content -->
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; {{ now "Y" }} Your Restaurant Name. All Right Reserved.</p>
+        </footer>
+    </body>
+</html>
