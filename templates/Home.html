@@ -55,9 +55,8 @@
         <img src="{% static 'images/logo.png' %}" alt="{{restaurant.name}} Logo" style="height:80px; margin-bottom:10px; display:block; margin-right:auto;">
         
         <h1 style="margin:0; font-size:2.5rem;">Welcome to{{restaurant_name}}</h1>
-        <p> We're happy to serve you the best food in town.</p>
-    </header>
-  
+        <p>We are happy to serve you the best food in town.</p>
+    </header> 
     
     <section style="text-align:center; margin:1.5rem 0;">
         <form method="GET" action="">
@@ -88,9 +87,34 @@
         <p><strong>Phone:</strong> {{phone_number}} </p>
     </main>
 
+    <main>
+        <h2 style="text-align:center;">Our Menu</h2>
+
+        {% if menu_items %}
+
+            <div class="menu-item">
+                {% for item in menu_items %}
+                    <div class="menu-item">
+                        <h3>{{ item.name }}</h3>
+                        <p>{{ item.description }}</p>
+                        <p class="price">{{ item.price }}</p>
+                        <p><em>Category: {{ item.category }}</em></p>
+                    </div>
+
+                {% endfor %}
+            </div>
+        {% else %}
+            <p style="text-align:center;">No menu items available at the moment.</p>
+        {% endif %}
+    </main>
+
+        
+
    
     <footer style="background-color:1f2937; color:#ccc; text-align:center; padding:1rem 0; margin-top:2rem;">
         &copy; {{ current_year }} {{ restaurant_name }} My Website. All Rights Reserved.
+        <br>
+        {{ phone_number }}
 
     </footer>
 </body>
