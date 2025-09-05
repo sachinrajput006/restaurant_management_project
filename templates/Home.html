@@ -108,6 +108,19 @@
         {% endif %}
     </main>
 
+    <section style="max-width:600px; margin:2rem auto; background:white; padding:2rem; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+        <h2 style="test-align:center; margin-bottom:1rem;">Contact Us</h2>
+
+        <form method="post" style="display:flex; flex-direction:column; gap:1rem;">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="sumbit"
+                style="padding:0.7rem; background-color:#4f46e5; color:white; border:none; border-radius:8px; cursor:pointer; font-size:1rem;">
+                Sumbit
+            </button>
+        </form>
+    </section>
+
         
 
    
