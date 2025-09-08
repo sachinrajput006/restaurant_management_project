@@ -58,6 +58,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'restaurant.context.processor.restaurant_name',
             ],
         },
     },
@@ -118,3 +119,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 RESTAURANT_PHONE = "+919876543210"
+
+
+RESTAURANT_NAME = "SKB Restaurant"
