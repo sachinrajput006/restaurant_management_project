@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            font-font-family: Arial, sans-serif;
+            background-color: #f7f8fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+
+        }
+        header {
+            background: #4f46e5;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1 rem;
+
+        }
+
+        .menu-item p {
+            margin: 0.3rem 0;
+        }
+
+        footer {
+            background: #1f2937;
+            color: #ccc;
+            text-text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Menu</h1>
+    </header>
+
+    <main>
+        {% for item in items %}
+        <div class="menu-item">
+            <h2>{{item.name}}</h2>
+            <p>{{item.description}}</p>
+            <p><strong>Price:</strong> {{ item.price }}</p>
+        </div>
+        {% empty %}
+            <p>No menu items available right now.</p>
+        {% endfor %}
+    </main>
+
+    <footer>
+        &copy; {{ current_year|default:2025 }} My Restaurant. All Rights Reserved.
+    </footer>
+</body>
+</html>
