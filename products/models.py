@@ -18,3 +18,11 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return f"{self.name} -{self.price}"
+
+class Restaurant(models.Model):
+    name = models.CharField(max_length=100, default="My Restaurant" )
+    address = models.CharField(max_length=300, default="123 new street delhi")
+
+
+    def __str__(self):
+        return self.name
