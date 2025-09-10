@@ -14,10 +14,11 @@ class MenuItem(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    IMAGE = models.ImageField(upload_to='menu_images/', blank=True, null=True)
 
 
     def __str__(self):
-        return f"{self.name} -{self.price}"
+        return self.name
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=100, default="My Restaurant" )
