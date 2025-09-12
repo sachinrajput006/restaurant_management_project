@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from .models import Item
+from .models import Item, MenuItem
 from .serializers import ItemSerializer
 from django.http import JsonResponse
 
@@ -53,5 +53,9 @@ def list_menu_items(request):
 
     return JsonResponse(menu_items, safe=False)
 
+
+def menu_view(request):
+    items = MenuItem.objects.all()
+    return render(request, "menu.html", {"items": items})
 
     
