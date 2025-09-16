@@ -122,3 +122,12 @@ RESTAURANT_PHONE = "+919876543210"
 
 
 RESTAURANT_NAME = "SKB Restaurant"
+
+
+EMAIL_BACKEND = "django.core.mail.backends.smpt.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "skbrestaurant@gmail.com"
+EMAIL_HOST_PASSWORD = "xyed sjfg ajdi"
+DEFAULT_FORM_EMAIL = EMAIL_HOST_USER
