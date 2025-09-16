@@ -35,7 +35,8 @@ def home(request):
     return render(request, "home.html",{
         "form": form,
         "menu_items": menu_items,
-        "query": query
+        "query": query,
+        "restaurant": restaurant
         })
 
 
