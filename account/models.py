@@ -33,3 +33,13 @@ class Menuitem(models.Model):
 
     def __str__(self):
         return self.name
+
+class Restaurant(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+
+    opening_hours = models.JASONField(default = dict)
+
+
+    def __str__(self):
+        return self.name
