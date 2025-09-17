@@ -39,7 +39,7 @@ class Restaurant(models.Model):
     description = models.TextField(blank=True, null=True)
 
     opening_hours = models.JASONField(default = dict)
-    address = models.TextField(blank=True, null=True)
+    address = models.TextField(max_length=255, blank=True, null=True)
 
 
     def __str__(self):
